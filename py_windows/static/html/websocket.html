@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>聊天室</title>
+</head>
+<body>
+    <div id="contents" style="width:400px;height: 300px;"></div>
+    <div>
+        <textarea id="msg" style="width: 300px; height: 90px;"></textarea>
+        <a href="" onclick="sendMsg()">发送</a>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        // //连接建立好的回调
+        // ws.onopen = function (ev) {
+        //     //向建立的连接发送消息
+        //     ws.send("hello websocket");
+        // }
+        // //收到后台发送的消息的回调
+        // ws.onmessage = function (ev) {
+        //     alert(ev.data);
+        // }
+
+            var ws = new WebSocket("ws://127.0.0.1:8000/chat");
+
+            ws.onmessage = function(e)
+            {
+                $("#contents").append("<p>" + e.data + "</p>");
+            }
+
+            function sendMsg()
+            {
+                var msg = $("#msg").val();
+                ws.send(msg);
+                $("#msg").val("");
+            }
+    </script>
+</body>
+</html>
