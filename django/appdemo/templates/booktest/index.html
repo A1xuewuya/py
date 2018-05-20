@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>index</title>
 </head>
 <body>
-    django,this is template
+    <ul>
+        {% for book in booklist %}
+            <li><a href="{{ book.id }}">
+                {{ book.id }}====={{ book.btitle }}
+            </a></li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

@@ -6,4 +6,5 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     url(r'^$', views.index),
+    url(r'^(\d+)$', views.show)
 ]
