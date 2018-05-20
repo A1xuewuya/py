@@ -22,10 +22,10 @@ class Migration(migrations.Migration):
             name='HeroInfo',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('hname', models.CharField(max_length=20)),
+                ('hname', models.CharField(max_length=10)),
                 ('hgender', models.BooleanField()),
-                ('hcontent', models.CharField(max_length=100)),
-                ('hBook', models.ForeignKey(to='booktest.BookInfo')),
+                ('hcontent', models.CharField(max_length=1000)),
+                ('hbook', models.ForeignKey(to='booktest.BookInfo')),
             ],
         ),
     ]
