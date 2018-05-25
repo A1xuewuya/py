@@ -13,5 +13,5 @@ class HeroInfo(models.Model):
     hname = models.CharField(max_length=20)
     hgender = models.BooleanField(default=True)
     hcontent = models.CharField(max_length=100)
-    hbook = models.ForeignKey('BookInfo')
+    hbook = models.ForeignKey(BookInfo)
     isDelete = models.BooleanField(default=False)
