@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+英雄名字：{{ hero.hname }}
+<br>
+技能:{{ hero.showContent }}
+<hr/>
+<ul>
+    {% for hero in list %}
+        <li>{{ forloop.counter }}--{{ hero.hname }}</li>
+        <li>{{ hero.showContent }}</li>
+    {% empty %}
+        什么数据都没有
+    {% endfor %}
+</ul>
+<hr/>
+<a href="{% url 'booktest:show' '123456' %}">链接</a>
+</body>
+</html>

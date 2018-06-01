@@ -1,0 +1,14 @@
+{% load cache %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>cache2</h2>
+    {% cache 600 hello %}
+        hello cache2
+    {% endcache %}
+</body>
+</html>
