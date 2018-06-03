@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 Django settings for dailyfresh project.
 
@@ -24,7 +25,7 @@ SECRET_KEY = 'rpz--@6m2yjcy3**2-(7c-=3a4)wp7a1)k4usz6$&yi2ft_a9#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -35,7 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'df_user'
+    'df_user',
+    'tinymce',
+    'df_goods'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,7 +102,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+#
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# 开发阶段部署目录
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+# 线上部署阶段目录
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+
+# tintmce富文本编辑器配置
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'width': 600,
+    'height': 400,
+}
